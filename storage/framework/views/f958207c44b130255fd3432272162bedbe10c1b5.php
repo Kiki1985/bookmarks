@@ -1,38 +1,32 @@
 <?php $__env->startSection('content'); ?>
-
 <p>Wellcome user <?php echo e(Auth::user()->name); ?></p>
 
- <form method="POST" action="/posts">
+<p>Insert e-mail adress:</p>
+
+<form method="POST" action="/links">
  <?php echo e(csrf_field()); ?>
 
 
-  Title:<br>
-  <input type="text" name="title" ><br>
+  
 
-  Body:<br>
-  <input type="text" name="body" ><br><br>
+  
+  <input type="text" name="adrese" ><br><br>
 
-  <input type="submit" value="Submit">
+  <input type="submit" value="Submit"><br><br><br><br>
 
 </form> 
 
-<ul>
-	<?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-		<li><?php echo e($post->title); ?>:  <a target="_blank" href="https://<?php echo e($post->body); ?>"><?php echo e($post->body); ?></a> , created at: <?php echo e($post->created_at->toFormattedDateString()); ?></li>
-	<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</ul>
-
-
-<?php echo $__env->make('errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
-
-
-<form "POST" action="/logout">
-
-<input type="submit" value="Logout">
-
+<form method="GET" action="/logout">
+	<input type="submit" value="Logout">
 </form>
 
+<?php $__currentLoopData = $links; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $link): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+	<p><?php echo e($link->body); ?></p>
+
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php /* /home/miroslav/Code/bookmarks/resources/views/home.blade.php */ ?>

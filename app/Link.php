@@ -1,7 +1,5 @@
 <?php
-
 namespace App;
-
 class Link extends Model
 {
 	public function user()

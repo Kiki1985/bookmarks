@@ -14,10 +14,11 @@
 
   <input type="submit" value="Submit">
 
-  <?php echo $__env->make('errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  
 
  </form>
 
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php /* /home/miroslav/Code/bookmarks/resources/views/sessions/create.blade.php */ ?>

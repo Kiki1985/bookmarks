@@ -1,12 +1,20 @@
 <?php $__env->startSection('content'); ?>
 
-<form method="GET" action="/login">
-	<input type="submit" value="Login">
-</form>
+<h1>Bookmarks</h1>
 
-<form method="GET" action="/register">
-	<input type="submit" value="Register">
-</form>
+<div style="float: left; margin-right: 10px">
+	<form method="GET" action="/login">
+		<input type="submit" value="Login">
+	</form>
+</div>
+
+<div style="float: left">
+	<form method="GET" action="/register">
+		<input type="submit" value="Register">
+	</form>
+</div>
 
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+<?php /* /home/miroslav/Code/bookmarks/resources/views/index.blade.php */ ?>

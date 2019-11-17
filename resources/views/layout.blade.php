@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>bookmarks</title>
-	
+	<title>Bookmarks</title>
 </head>
 <body>
-
 	@yield('content')
 
 </body>

@@ -8,37 +8,24 @@ use App\Link;
 
 class LinksController extends Controller
 {
-    public function index()
-    {
-    	return view('index');
+    public function index(){
+        return view('/home');
     }
-
-
-    public function create()
-    {
-        
-
+    
+	public function create(){
     	$links = Link::where('user_id', '=', auth()->user()->id)->get();
-
-    	return view('/home',compact('links'));
-    }
-
-
-	
-
-    public function store()
-    {
         
-    	$this->validate(request(),[
-    		'adrese'=>'required'
-    	]);
-
-    	Link::create([ 
-            'adrese' => request('adrese'),
-            'user_id' => auth()->user()->id
-        ]);
-
-        return redirect('/home');
+    	return($links);
     }
 
+
+    public function store(){
+        $adrese = new Link;
+        $adrese->adrese = request('adrese');
+        $adrese->user_id = auth()->user()->id;
+        $adrese->save();
+    	
+        return($adrese);
+    }
+    
 }

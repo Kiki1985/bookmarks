@@ -1,3 +1,4 @@
+
 @extends('layout')
 
 
@@ -20,7 +21,7 @@
 
   <input type="submit" value="Submit">
 
-  @include('errors')
+  
 
  </form>
 

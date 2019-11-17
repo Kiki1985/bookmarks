@@ -1,15 +1,19 @@
 @extends('layout')
 
-
-
 @section('content')
 
-<form method="GET" action="/login">
-	<input type="submit" value="Login">
-</form>
+<h1>Bookmarks</h1>
 
-<form method="GET" action="/register">
-	<input type="submit" value="Register">
-</form>
+<div style="float: left; margin-right: 10px">
+	<form method="GET" action="/login">
+		<input type="submit" value="Login">
+	</form>
+</div>
+
+<div style="float: left">
+	<form method="GET" action="/register">
+		<input type="submit" value="Register">
+	</form>
+</div>
 
 @endsection
